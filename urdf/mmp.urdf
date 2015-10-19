@@ -1,0 +1,37 @@
+<robot name="mmp">
+  <link name="base_link">
+    <visual>
+      <geometry>
+         <box size="0.455 0.50 0.23"/>
+      </geometry>
+      <material name="greyest">
+         <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+       <geometry>
+         <box size="0.455 0.50 0.23"/>
+       </geometry>
+    </collision>
+  </link>
+
+  <link name="laser">
+   <visual>
+      <geometry>
+         <cylinder length="0.07" radius="0.0175"/>
+      </geometry>
+      <material name="grey">
+         <color rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_to_laser" type="continuous">
+    <parent link="base_link"/>
+    <child link="laser"/>
+    <origin xyz="0.14 0 0.265" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+</robot>
+

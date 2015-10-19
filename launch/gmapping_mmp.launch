@@ -1,0 +1,18 @@
+<launch>
+
+  <!--- Run gmapping -->
+  <include file="$(find cear_jenni)/launch/includes/gmapping.launch.xml">
+    <arg name="odom_frame" value="odom_combined"/>
+  </include>
+
+  <!--- Run Move Base -->
+  <include file="$(find cear_jenni)/launch/move_base.launch" />
+
+  <param name="robot_description" textfile="$(find cear_jenni)/urdf/mmp.urdf" />
+
+  <!-- publish all the frames to TF -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+    <param name="publish_frequency" value="50"/> <!-- Hz -->
+  </node>
+
+</launch>

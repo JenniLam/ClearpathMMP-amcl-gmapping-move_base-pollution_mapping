@@ -1,0 +1,32 @@
+<launch>    
+	<!-- Run the map server with a map _ default : map of closed willow_garage -->
+	<arg name="map_file" default="$(find cear_jenni)/maps/lab_07_15.yaml"/>
+	<node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+	
+	<!-- Localization -->
+	<arg name="initial_pose_x" default="0.0"/>
+	<arg name="initial_pose_y" default="0.0"/>
+	<arg name="initial_pose_a" default="0.0"/>
+	<arg name="odom_frame_id" value="odom_combined"/>
+	<include file="$(find cear_jenni)/launch/includes/amcl.launch.xml">
+		<arg name="scan_topic" value="/scan"/>
+		<arg name="odom_frame_id" value="$(arg odom_frame_id)"/>
+		<arg name="base_frame_id" value="base_footprint"/>
+		<arg name="use_map_topic" value="true"/>
+		<arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+		<arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+		<arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+	</include>
+	
+	<!-- Move Base -->
+	<include file="$(find cear_jenni)/launch/move_base.launch"/>
+
+        <param name="robot_description" textfile="$(find cear_jenni)/urdf/mmp.urdf" />
+
+	<!-- publish all the frames to TF -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+    		<param name="publish_frequency" value="50"/> <!-- Hz -->
+	</node>
+	
+</launch>
+

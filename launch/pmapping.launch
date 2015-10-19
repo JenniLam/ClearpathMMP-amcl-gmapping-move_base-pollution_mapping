@@ -1,0 +1,5 @@
+<launch>
+
+  <node name="pmapping" pkg="cear_jenni" type="pmapping"/>
+
+</launch>
