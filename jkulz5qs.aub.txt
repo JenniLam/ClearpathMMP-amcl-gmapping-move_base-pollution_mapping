@@ -1,0 +1,40 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#	new file:   CMakeLists.txt
+#	new file:   CMakeLists.txt~
+#	new file:   config/base_local_planner_params.yaml
+#	new file:   config/costmap_common_params.yaml
+#	new file:   config/global_costmap_params.yaml
+#	new file:   config/local_costmap_params.yaml
+#	new file:   images/frame0000.jpg
+#	new file:   images/frame0001.jpg
+#	new file:   images/frame0002.jpg
+#	new file:   images/frame0003.jpg
+#	new file:   launch/amcl_mmp.launch
+#	new file:   launch/gmapping_mmp.launch
+#	new file:   launch/includes/amcl.launch.xml
+#	new file:   launch/includes/gmapping.launch.xml
+#	new file:   launch/move_base.launch
+#	new file:   launch/pmapping.launch
+#	new file:   launch/view_mmp.launch
+#	new file:   maps/lab_07_15.pgm
+#	new file:   maps/lab_07_15.yaml
+#	new file:   maps/pollution_lab.pgm
+#	new file:   maps/pollution_lab.yaml
+#	new file:   nodes/odom_ekf.py
+#	new file:   nodes/pmapping.cpp
+#	new file:   nodes/pmapping.cpp~
+#	new file:   nodes/tmp_mq.cpp
+#	new file:   nodes/tmp_mq.cpp~
+#	new file:   package.xml
+#	new file:   package.xml~
+#	new file:   rviz/mmp.rviz
+#	new file:   urdf/mmp.urdf
+#
+
